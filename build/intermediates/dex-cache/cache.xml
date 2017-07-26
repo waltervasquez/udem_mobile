@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/5a11f020cce2d11eb71ba916700600e18c4547e7/okhttp-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.8.0_b742593b9abb8973b81a1ac654c69cfca2c40d28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/Projects/udem_mobile/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="7c7493581c9723b824d5c36cf139bbec03444823">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ec658b9f07616baf2377b1cd9ea51c4244391a8e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/bcacde6a8ccedcc56c127403d26b76072fe6214d/retrofit-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.3.0_d24f718ee646d84a0e458210108db26b2d1212c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.13.0_ab6d83157cf3ef06301fad9a445764c2f5d9e272/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/Projects/udem_mobile/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_7e572f949063137753f2ab6f56f82085e0839a08/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.3.0/9e09011e9767bb76b5e27c9b8223476b93b14631/converter-gson-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.3.0_e6bccf63f1a13f27ea9d3ad360578c1e91c9ec91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.android/build-cache/747f2b8ee6c4b2c496e96bd16717a41e6e83a6b5/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="536228b2496030d983d01856aa56b4d71b57d0db">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9bd0b2876d451564c6b3714782459c3d91226f5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.android/build-cache/4af7e142c2570e5344a921444675def74a518801/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="259fbf4696602f0ef0faf5f1cf8077891162ecda">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e2c622453b346e915dd9b52be9c1d5144f4d7737/classes.dex" />
+    </item>
+
+</items>
