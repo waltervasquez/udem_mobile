@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mobile.udem">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,10 +36,12 @@
         <activity
             android:name=".ui.activities.WalkthroughActivity"
             android:theme="@style/CustomWelcomeScreenTheme" />
-
-        <activity android:name=".ui.activities.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activities.ProfileActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

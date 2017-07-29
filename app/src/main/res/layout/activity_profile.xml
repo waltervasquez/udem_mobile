@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.flipboard.bottomsheet.BottomSheetLayout
+    android:id="@+id/bottom_sheet"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="com.mobile.udem.ui.activities.ProfileActivity">
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorPrimary"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true">
+
+                    <ImageView
+                        android:id="@+id/user_profile_image_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:fitsSystemWindows="true"
+                        android:tint="#e00d47a1"/>
+
+                    <ImageView
+                        android:id="@+id/user_profile_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:translationZ="10dp"
+                        android:background="@drawable/profile_circular_border_imageview"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="90dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/profile_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="20dp"
+                        android:paddingLeft="20dp"
+                        android:background="@color/white"
+                        android:layout_below="@+id/user_profile_image_background"
+                        android:elevation="4dp"
+                        android:paddingBottom="24dp">
+
+                        <TextView
+                            android:id="@+id/user_profile_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="50dp"
+                            android:text="John Smith"
+                            android:textSize="24sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:id="@+id/user_profile_short_bio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/user_profile_name"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="16dp"
+                            android:text="Ingenieria en sistemas"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <!-- <LinearLayout
+                             android:id="@+id/interest_list"
+                             android:layout_width="match_parent"
+                             android:layout_height="wrap_content"
+                             android:gravity="center"
+                             android:layout_below="@+id/user_profile_short_bio"
+                             android:orientation="horizontal" />
+                        -->
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</com.flipboard.bottomsheet.BottomSheetLayout>

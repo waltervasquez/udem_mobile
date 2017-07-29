@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="7c7493581c9723b824d5c36cf139bbec03444823">
+        sha1="42feb5728347d9c2a1c6a10983452b422898453a">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ec658b9f07616baf2377b1cd9ea51c4244391a8e/classes.dex" />
     </item>
     <item
@@ -36,6 +36,15 @@
         revision="25.0.3"
         sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.13.0_ab6d83157cf3ef06301fad9a445764c2f5d9e272/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.android/build-cache/ab3ad8c7652217efbc6eb5cc2a779c3241df4f4f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a2af9c72ccaa4c5c049b500ca6ea664a4ce1f7d4">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_09056043582df4fd0e54d73219bb65eb172f47fd/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -63,6 +72,15 @@
         revision="25.0.3"
         sha1="536228b2496030d983d01856aa56b4d71b57d0db">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9bd0b2876d451564c6b3714782459c3d91226f5e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.android/build-cache/ea958b9a832bb7eab1510e611b025f596bbcad0f/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4a88eaa7f9a31907def9a7968367475bdf5170be">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_721295500c36374bfe93d73b3c841a6ba523e18e/classes.dex" />
     </item>
     <item
         is-multidex="true"

@@ -102,6 +102,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="exifinterface-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
@@ -111,11 +112,15 @@
     <orderEntry type="library" exported="" name="design-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="bottomsheet-core-1.5.3" level="project" />
     <orderEntry type="library" exported="" name="welcome-1.4.1" level="project" />
+    <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="support-fragment-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="bottomsheet-commons-1.5.3" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-2.2.2" level="project" />
+    <orderEntry type="library" exported="" name="android-image-cropper-2.4.7" level="project" />
     <orderEntry type="library" exported="" name="preference-v7-25.3.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="exposed-instrumentation-api-publish-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="rules-0.5" level="project" />
@@ -126,6 +131,7 @@
     <orderEntry type="library" exported="" name="converter-gson-2.3.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="gson-2.7" level="project" />
+    <orderEntry type="library" exported="" name="circleimageview-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-3.8.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="javawriter-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.3.1" level="project" />
