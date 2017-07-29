@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images"
     android:focusableInTouchMode="true"
+    android:background="@color/colorPrimary"
     tools:context="com.mobile.udem.ui.activities.LoginActivity">
 
     <ImageView
@@ -44,7 +44,7 @@
         android:id="@+id/loginSignIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/white_opacy"
         android:background="@drawable/rounded_button_disabled"
         android:enabled="false"
         android:foreground="?attr/selectableItemBackgroundBorderless"

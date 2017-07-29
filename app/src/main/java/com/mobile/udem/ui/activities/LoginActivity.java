@@ -2,6 +2,7 @@ package com.mobile.udem.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -73,9 +74,11 @@ public class LoginActivity extends AppCompatActivity {
         if(TextUtils.isEmpty(stringUser)|| TextUtils.isEmpty(stringpassword)){
             signIn.setEnabled(false);
             signIn.setBackgroundResource(R.drawable.rounded_button_disabled);
+            signIn.setTextColor(ContextCompat.getColor(this, R.color.white_opacy));
         } else {
             signIn.setEnabled(true);
             signIn.setBackgroundResource(R.drawable.rounded_button_primary);
+            signIn.setTextColor(ContextCompat.getColor(this, R.color.white));
         }
     }
 }
