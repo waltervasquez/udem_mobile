@@ -3,10 +3,12 @@
     <color name="colorPrimary">#FF430756</color>
     <color name="colorPrimaryDark">#FF3D074E</color>
     <color name="colorAccent">#FF430756</color>
+    <color name="purple400">#AB47BC</color>
     <color name="black">#000000</color>
     <color name="black_overlay">#88000000</color>
     <color name="black_nav">#1B1B1B</color>
     <color name="white">#FFFFFF</color>
     <color name="white_opacy">#80FFFFFF</color>
+    <color name="pink900">#880E4F</color>
     <color name="disabled">#80430756</color>
 </resources>
