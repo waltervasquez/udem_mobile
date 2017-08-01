@@ -40,8 +40,11 @@
             android:name=".ui.activities.LoginActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.ProfileActivity"
+        <activity
+            android:name=".ui.activities.ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activities.HistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

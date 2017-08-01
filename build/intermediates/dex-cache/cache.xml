@@ -3,39 +3,12 @@
 
     <item
         is-multidex="true"
-        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/5a11f020cce2d11eb71ba916700600e18c4547e7/okhttp-3.8.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
-        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.8.0_b742593b9abb8973b81a1ac654c69cfca2c40d28/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/osmar/Projects/udem_mobile/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="42feb5728347d9c2a1c6a10983452b422898453a">
+        sha1="f2b8fe16d0c61edad59c1409d0216999c3aa8929">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ec658b9f07616baf2377b1cd9ea51c4244391a8e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/bcacde6a8ccedcc56c127403d26b76072fe6214d/retrofit-2.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
-        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.3.0_d24f718ee646d84a0e458210108db26b2d1212c4/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.13.0_ab6d83157cf3ef06301fad9a445764c2f5d9e272/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -57,12 +30,75 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/osmar/.android/build-cache/4af7e142c2570e5344a921444675def74a518801/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="259fbf4696602f0ef0faf5f1cf8077891162ecda">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e2c622453b346e915dd9b52be9c1d5144f4d7737/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.1/98e484e67f913e934559f7f55f0c94be5593f03c/kotlin-stdlib-1.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="98e484e67f913e934559f7f55f0c94be5593f03c">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-1.1.1_21a5075511a84c1621fc19c4f123337122a2b118/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.8.0/5a11f020cce2d11eb71ba916700600e18c4547e7/okhttp-3.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5a11f020cce2d11eb71ba916700600e18c4547e7">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okhttp-3.8.0_b742593b9abb8973b81a1ac654c69cfca2c40d28/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/bcacde6a8ccedcc56c127403d26b76072fe6214d/retrofit-2.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="bcacde6a8ccedcc56c127403d26b76072fe6214d">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/retrofit-2.3.0_d24f718ee646d84a0e458210108db26b2d1212c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/okio-1.13.0_ab6d83157cf3ef06301fad9a445764c2f5d9e272/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.android/build-cache/8ab9f16447b7222e7744fe20c8e96da92f031d0d/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="e97b3748da4ddfc0bc8ce28399db454874cd8890">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_00c8ad948cab995652909bc2a4b3c5819800ade5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/osmar/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.3.0/9e09011e9767bb76b5e27c9b8223476b93b14631/converter-gson-2.3.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
         sha1="9e09011e9767bb76b5e27c9b8223476b93b14631">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/converter-gson-2.3.0_e6bccf63f1a13f27ea9d3ad360578c1e91c9ec91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/osmar/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/annotations-13.0_32eff4605555fbf6755108d91dfc9e7ac374be5c/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -81,15 +117,6 @@
         revision="25.0.3"
         sha1="4a88eaa7f9a31907def9a7968367475bdf5170be">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_721295500c36374bfe93d73b3c841a6ba523e18e/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/osmar/.android/build-cache/4af7e142c2570e5344a921444675def74a518801/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.3"
-        sha1="259fbf4696602f0ef0faf5f1cf8077891162ecda">
-        <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e2c622453b346e915dd9b52be9c1d5144f4d7737/classes.dex" />
     </item>
 
 </items>
