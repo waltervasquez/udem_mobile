@@ -36,7 +36,7 @@
                 android:id="@+id/loginUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 style="@style/edit_text_login"
                 android:background="@drawable/rounded_edit_default"
                 android:hint="@string/login_user"/>
@@ -64,7 +64,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="40dp"
-            android:padding="15dpgir"
+            android:padding="15dp"
             app:initialCornerAngle="50dp"
             android:layout_centerHorizontal="true"
             app:finalCornerAngle="50dp"

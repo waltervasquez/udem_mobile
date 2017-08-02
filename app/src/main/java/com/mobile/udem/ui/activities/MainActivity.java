@@ -3,26 +3,23 @@ package com.mobile.udem.ui.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.mobile.udem.R;
 import com.mobile.udem.app.Prefs;
 import com.mobile.udem.models.User;
 import com.stephentuso.welcome.WelcomeHelper;
-
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,26 +28,30 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fresco.initialize(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_menu);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
 
         welcomeScreen = new WelcomeHelper(this, WalkthroughActivity.class);
         welcomeScreen.show(savedInstanceState);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
+        toggle.setDrawerIndicatorEnabled(false);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawer.openDrawer(Gravity.LEFT);
+            }
+        });
+
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -77,12 +78,7 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -95,10 +91,10 @@ public class MainActivity extends AppCompatActivity
         User user = User.getTestUser();
         Uri photo = Uri.parse(user.getPhoto());
         //ImageView profile = (ImageView) view.findViewById(R.id.drawer_background);
-        CircleImageView avatar = (CircleImageView) view.findViewById(R.id.drawer_avatar);
+        SimpleDraweeView avatar = (SimpleDraweeView) view.findViewById(R.id.drawer_avatar);
         TextView name = (TextView) view.findViewById(R.id.drawer_name);
 
-        Glide.with(this).load(photo).into(avatar);
+        avatar.setImageURI(photo);
         name.setText(user.getName());
 
         avatar.setOnClickListener(new View.OnClickListener() {
