@@ -3,90 +3,31 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_marginTop="10dp"
-    android:layout_height="140dp">
+    android:layout_height="wrap_content">
  <RelativeLayout
+     android:id="@+id/row_container"
      android:layout_width="match_parent"
      android:layout_height="wrap_content">
      <TextView
-         android:id="@+id/history_number"
-         android:layout_width="50dp"
-         android:layout_height="match_parent"
+         android:id="@+id/row_history_number"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
          android:textSize="30sp"
          android:gravity="center"
-         android:textColor="@color/white"
-         android:background="@color/colorPrimary"
+         android:layout_centerHorizontal="true"
+         android:textColor="@color/text_gray"
+         android:background="@drawable/circle_background"
+         android:layout_marginTop="20dp"
          android:text="1"/>
-     <RelativeLayout
+     <TableLayout
+         android:id="@+id/history_table"
          android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:padding="20dp"
-         android:layout_toRightOf="@+id/history_number">
-     <TextView
-         android:id="@+id/history_class_first"
-         android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:paddingBottom="10dp"
-         android:text="Introduccion a la informatica" />
-     <CheckBox
-         android:id="@+id/history_state_first"
-         android:layout_width="20dp"
-         android:layout_height="20dp"
-         android:button="@android:color/transparent"
-         android:layout_alignParentRight="true"
-         android:layout_alignTop="@+id/history_class_first"
-         android:background="@drawable/check_history_background"
-         />
-     <TextView
-         android:id="@+id/history_class_second"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/history_class_first"
-         android:paddingBottom="10dp"
-         android:text="Programacion distribuida"/>
-     <CheckBox
-         android:id="@+id/history_state_second"
-         android:layout_width="20dp"
-         android:layout_height="20dp"
-         android:layout_alignTop="@+id/history_class_second"
-         android:button="@android:color/transparent"
-         android:checked="true"
-         android:background="@drawable/check_history_background"
-         android:layout_alignParentRight="true"
-         android:layout_alignParentEnd="true" />
-     <TextView
-         android:id="@+id/history_class_third"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/history_class_second"
-         android:paddingBottom="10dp"
-         android:text="Ingles"/>
-     <CheckBox
-         android:id="@+id/history_state_third"
-         android:layout_width="20dp"
-         android:layout_height="20dp"
-         android:layout_alignTop="@+id/history_class_third"
-         android:button="@android:color/transparent"
-         android:checked="true"
-         android:background="@drawable/check_history_background"
-         android:layout_alignParentRight="true"
-         android:layout_alignParentEnd="true" />
-     <TextView
-         android:id="@+id/history_class_fourth"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/history_class_third"
-         android:text="Filosofia"/>
-     <CheckBox
-         android:id="@+id/history_state_fourth"
-         android:layout_width="20dp"
-         android:layout_height="20dp"
-         android:layout_alignTop="@+id/history_class_fourth"
-         android:button="@android:color/transparent"
-         android:checked="true"
-         android:background="@drawable/check_history_background"
-         android:layout_alignParentRight="true"
-         android:layout_alignParentEnd="true" />
-     </RelativeLayout>
+         android:layout_marginTop="10dp"
+         android:layout_below="@+id/row_history_number">
+
+     </TableLayout>
+
  </RelativeLayout>
 
 </android.support.v7.widget.CardView>

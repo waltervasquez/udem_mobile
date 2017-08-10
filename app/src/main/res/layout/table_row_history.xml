@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/history_class"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Introduccion a la informatica" />
+    <CheckBox
+        android:id="@+id/history_state"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentRight="true"
+        android:button="@android:color/transparent"
+        android:background="@drawable/check_history_background"
+        />
+</RelativeLayout>

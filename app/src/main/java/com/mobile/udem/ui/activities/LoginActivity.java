@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                                               public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
                                                   Prefs.with(LoginActivity.this).setSignUp(true);
+                                                  Prefs.with(LoginActivity.this).setUser(user.getText().toString());
                                                   Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                                   startActivity(intent);
                                                   finish();

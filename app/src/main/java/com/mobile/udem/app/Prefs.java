@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 public class Prefs {
 
     private static final String SIGN_UP = "sign_up";
+    private static final String USER = "user";
     private static final String PREFS_NAME = "prefs";
     private static Prefs instance;
     private final SharedPreferences sharedPreferences;
@@ -27,15 +28,25 @@ public class Prefs {
         return instance;
     }
 
-    public void setSignUp(boolean totalTime) {
+    public void setSignUp(boolean loggin) {
 
         sharedPreferences
                 .edit()
-                .putBoolean(SIGN_UP, totalTime)
+                .putBoolean(SIGN_UP, loggin)
+                .apply();
+    }
+    public void setUser(String user){
+        sharedPreferences
+                .edit()
+                .putString(USER, user)
                 .apply();
     }
 
     public boolean getSignUp(){
         return sharedPreferences.getBoolean(SIGN_UP, false);
+    }
+
+    public String getUser(){
+        return sharedPreferences.getString(USER,"");
     }
 }

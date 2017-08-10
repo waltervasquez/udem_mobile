@@ -21,4 +21,10 @@
     <!-- Keyboard problem-->
     <string name="vowel">á é í ó ú</string>
     <string name="title_activity_profile">Perfil</string>
+    <string name="nav_notes">Calificaciones</string>
+    <string name="nav_class">Clases</string>
+    <string name="nav_setting">Configuraciones</string>
+    <string name="nav_location">Lugares</string>
+    <string name="nav_teacher">Profesores</string>
+    <string name="nav_logout">Cerrar sesion</string>
 </resources>

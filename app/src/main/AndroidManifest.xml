@@ -43,8 +43,7 @@
         <activity
             android:name=".ui.activities.ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.HistoryActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activities.NotificationActivity"></activity>
     </application>
 
 </manifest>

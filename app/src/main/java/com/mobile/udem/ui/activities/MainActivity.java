@@ -5,13 +5,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
@@ -23,21 +27,24 @@ import com.stephentuso.welcome.WelcomeHelper;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private ImageView iconButtonMessages;
+    private TextView itemMessagesBadgeTextView;
+    private RelativeLayout badgeLayout;
     WelcomeHelper welcomeScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
+        welcomeScreen = new WelcomeHelper(this, WalkthroughActivity.class);
+        welcomeScreen.show(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_menu);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
 
-
-        welcomeScreen = new WelcomeHelper(this, WalkthroughActivity.class);
-        welcomeScreen.show(savedInstanceState);
 
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -67,6 +74,11 @@ public class MainActivity extends AppCompatActivity
             finish();
         }
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        welcomeScreen.onSaveInstanceState(outState);
+    }
 
     @Override
     public void onBackPressed() {
@@ -79,11 +91,7 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        welcomeScreen.onSaveInstanceState(outState);
-    }
+
 
     private void loadProfile(NavigationView navigationView){
         View view = navigationView.getHeaderView(0);
@@ -110,20 +118,33 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
         startActivity(intent);
     }
+    private void setNotificationCount(){
+        itemMessagesBadgeTextView.setText("2");
+        itemMessagesBadgeTextView.setVisibility(View.VISIBLE);
+        //iconButtonMessages.setTextColor(getResources().getColor(R.color.white));
+    }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.notification, menu);
+        MenuItem item = menu.findItem(R.id.action_notification);
+        MenuItemCompat.setActionView(item, R.layout.badge_layout);
+        View v = MenuItemCompat.getActionView(item);
+        itemMessagesBadgeTextView = (TextView) v.findViewById(R.id.badge_textView);
+        itemMessagesBadgeTextView.setVisibility(View.GONE); // initially hidden
+        iconButtonMessages = (ImageView) v.findViewById(R.id.badge_icon_button);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        setNotificationCount();
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NotificationActivity.class);
+                startActivity(intent);
+                itemMessagesBadgeTextView.setVisibility(View.GONE); // initially hidden
+            }
+        });
 
-        return super.onOptionsItemSelected(item);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
