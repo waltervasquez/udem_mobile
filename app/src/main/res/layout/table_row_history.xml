@@ -9,13 +9,13 @@
         android:layout_height="wrap_content"
         android:paddingBottom="10dp"
         android:ellipsize="end"
-        android:maxLines="1"
-        android:text="Introduccion a la informatica" />
+        android:maxLines="1" />
     <CheckBox
         android:id="@+id/history_state"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:button="@android:color/transparent"
         android:background="@drawable/check_history_background"
         />

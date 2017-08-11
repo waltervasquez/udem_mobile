@@ -43,7 +43,9 @@
         <activity
             android:name=".ui.activities.ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.NotificationActivity"></activity>
+        <activity android:name=".ui.activities.NotificationActivity" />
+        <activity android:name=".ui.activities.NoteActivity" />
+        <activity android:name=".ui.activities.SettingActivity"></activity>
     </application>
 
 </manifest>

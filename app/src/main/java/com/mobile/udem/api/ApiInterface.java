@@ -2,6 +2,7 @@ package com.mobile.udem.api;
 
 import com.mobile.udem.models.Auth;
 import com.mobile.udem.models.History;
+import com.mobile.udem.models.Notes;
 import com.mobile.udem.models.User;
 
 import java.util.List;
@@ -28,8 +29,14 @@ public interface ApiInterface {
     Call<User> signIn(@Body Auth auth);
 
     /*
-    http://udemservices.udem.edu.ni/api/Historial/121388
+    http://udemservices.udem.edu.ni/api/Historial/170000
    */
     @GET("Historial/{usuario}")
     Call<List<History>> getHistory(@Path("usuario") String code);
+
+    /*
+    http://udemservices.udem.edu.ni/api/Calificaciones/121388
+   */
+    @GET("Calificaciones/{usuario}")
+    Call<List<Notes>> getNotes(@Path("usuario") String code);
 }

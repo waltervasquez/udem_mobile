@@ -27,4 +27,8 @@
     <string name="nav_location">Lugares</string>
     <string name="nav_teacher">Profesores</string>
     <string name="nav_logout">Cerrar sesion</string>
+    <string name="notes_accumulated">Acumulado</string>
+    <string name="notes_quiz">Examen</string>
+    <string name="notes_final">Final</string>
+    <string name="notes_rescue">Rescate</string>
 </resources>

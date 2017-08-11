@@ -3,11 +3,11 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
+            android:id="@+id/nav_notes"
             android:title="@string/nav_notes"
             android:icon="@drawable/nav_notes"/>
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_class"
             android:title="@string/nav_class"
             android:icon="@drawable/nav_class"/>
         <item
@@ -15,11 +15,11 @@
             android:title="@string/nav_teacher"
             android:icon="@drawable/nav_teacher"/>
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_map_location"
             android:title="@string/nav_location"
             android:icon="@drawable/nav_map_location"/>
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_settings"
             android:title="@string/nav_setting"
             android:icon="@drawable/nav_settings"/>
         <item

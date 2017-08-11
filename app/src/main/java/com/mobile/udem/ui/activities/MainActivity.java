@@ -146,6 +146,10 @@ public class MainActivity extends AppCompatActivity
 
         return super.onCreateOptionsMenu(menu);
     }
+    private void openActivity(Class activity){
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
+    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -153,16 +157,18 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_notes) {
+            openActivity(NoteActivity.class);
+        } else if (id == R.id.nav_class) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_teacher) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_map_location) {
+
+        } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_sign_out) {
-           Prefs.with(this).setSignUp(false);
+            Prefs.with(this).setSignUp(false);
             recreate();
         }
 
