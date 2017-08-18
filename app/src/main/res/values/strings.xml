@@ -31,4 +31,8 @@
     <string name="notes_quiz">Examen</string>
     <string name="notes_final">Final</string>
     <string name="notes_rescue">Rescate</string>
+
+    <!-- Googlee api key -->
+    <string name="google_api_key">AIzaSyDv0hBPiARb8igqSZ-tzSiBqDCTX-V56zY</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

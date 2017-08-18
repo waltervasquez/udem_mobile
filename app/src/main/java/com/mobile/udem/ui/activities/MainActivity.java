@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity
         checkAuth();
     }
     private void checkAuth(){
-        if (!Prefs.with(this).getSignUp()) {
+        if (!Prefs.with(this).getIsLogin()) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
@@ -164,11 +164,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_teacher) {
 
         } else if (id == R.id.nav_map_location) {
+            openActivity(MapsActivity.class);
 
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_sign_out) {
-            Prefs.with(this).setSignUp(false);
+            Prefs.with(this).setIsLogin(false);
             recreate();
         }
 

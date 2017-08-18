@@ -3,20 +3,26 @@ package com.mobile.udem.ui.activities;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 
 import com.mobile.udem.R;
+import com.mobile.udem.api.Api;
 import com.mobile.udem.app.Prefs;
+import com.mobile.udem.models.Auth;
+import com.mobile.udem.models.User;
 
 import br.com.simplepass.loading_button_lib.customViews.CircularProgressButton;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     EditText user;
@@ -36,22 +42,11 @@ public class LoginActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                signIn.startAnimation();
-                new Handler().postDelayed(new Runnable() {
-                                              @Override
-                                              public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
-                                                  Prefs.with(LoginActivity.this).setSignUp(true);
-                                                  Prefs.with(LoginActivity.this).setUser(user.getText().toString());
-                                                  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                                  startActivity(intent);
-                                                  finish();
-                                                  signIn.revertAnimation();
-                                              }
-                                          }, 5000);
+                trySignIn();
 
             }
         });
+
         setStatusBarTranslucent(true);
 
 
@@ -67,6 +62,38 @@ public class LoginActivity extends AppCompatActivity {
                 getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             }
         }
+    }
+    private void trySignIn(){
+
+        signIn.startAnimation();
+        Auth auth = new Auth();
+        auth.setUsuario(user.getText().toString());
+        auth.setPassword(password.getText().toString());
+        Call<User> call = Api.instance().signIn(auth);
+        call.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+
+               Log.i("api_login", response.body().getName());
+                Prefs.with(LoginActivity.this).setIsLogin(true);
+
+                Prefs.with(LoginActivity.this).store(
+                        response.body().getId(),
+                        response.body().getName(),
+                        response.body().getGender(),
+                        response.body().getPhoto());
+
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+                signIn.revertAnimation();
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
     }
     private void initializeViews() {
         user = (EditText) findViewById(R.id.loginUser);
