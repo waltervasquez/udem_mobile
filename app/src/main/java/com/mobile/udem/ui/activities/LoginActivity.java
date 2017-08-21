@@ -3,6 +3,7 @@ package com.mobile.udem.ui.activities;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -12,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.ScrollView;
 
 import com.mobile.udem.R;
 import com.mobile.udem.api.Api;
@@ -28,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText user;
     EditText password;
     CircularProgressButton signIn;
+    ScrollView rootView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,32 +76,44 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
+              if(response.isSuccessful() && response.body() != null) {
 
-               Log.i("api_login", response.body().getName());
-                Prefs.with(LoginActivity.this).setIsLogin(true);
+                  Log.i("api_login", response.body().getNombres());
 
-                Prefs.with(LoginActivity.this).store(
-                        response.body().getId(),
-                        response.body().getName(),
-                        response.body().getGender(),
-                        response.body().getPhoto());
+                  Prefs.with(LoginActivity.this).setIsLogin(true);
+                  Prefs.with(LoginActivity.this).setUser(response.body().getUsuario());
+                  Prefs.with(LoginActivity.this).setPhoto(response.body().getFoto());
+                  User user = new User();
+                  user.setNombres(response.body().getNombres());
 
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                signIn.revertAnimation();
+
+                  Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                  startActivity(intent);
+                  finish();
+                  signIn.revertAnimation();
+              }
+              else {
+                  showError(Api.parseError(response.errorBody()).toString());
+              }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-
+              showError(t.getMessage());
+                signIn.revertAnimation();
             }
         });
+    }
+    private void showError(String error){
+        Snackbar snackbar = Snackbar
+                .make(rootView, error, Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
     private void initializeViews() {
         user = (EditText) findViewById(R.id.loginUser);
         password = (EditText) findViewById(R.id.loginPassword);
         signIn = (CircularProgressButton) findViewById(R.id.loginSubmit);
+        rootView = (ScrollView) findViewById(R.id.scollLogin);
     }
     private void isEmptyFields() {
         TextWatcher mTextWatcher = new TextWatcher() {

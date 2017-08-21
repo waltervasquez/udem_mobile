@@ -20,7 +20,11 @@
     <string name="action_sign_in">Inicar sesion</string>
     <!-- Keyboard problem-->
     <string name="vowel">á é í ó ú</string>
+    <!-- Activities titles -->
     <string name="title_activity_profile">Perfil</string>
+    <string name="title_activity_note">Calificaciones</string>
+    <string name="title_activity_maps">Map</string>
+    <!-- Navigation -->
     <string name="nav_notes">Calificaciones</string>
     <string name="nav_class">Clases</string>
     <string name="nav_setting">Configuraciones</string>
@@ -34,5 +38,4 @@
 
     <!-- Googlee api key -->
     <string name="google_api_key">AIzaSyDv0hBPiARb8igqSZ-tzSiBqDCTX-V56zY</string>
-    <string name="title_activity_maps">Map</string>
 </resources>

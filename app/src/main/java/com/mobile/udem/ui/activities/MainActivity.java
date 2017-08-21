@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     private TextView itemMessagesBadgeTextView;
     private RelativeLayout badgeLayout;
     WelcomeHelper welcomeScreen;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,17 +62,21 @@ public class MainActivity extends AppCompatActivity
 
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        loadProfile(navigationView);
         checkAuth();
+
     }
     private void checkAuth(){
         if (!Prefs.with(this).getIsLogin()) {
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();
+        }
+        else {
+
+            loadProfile(navigationView);
         }
     }
     @Override
@@ -95,15 +100,13 @@ public class MainActivity extends AppCompatActivity
 
     private void loadProfile(NavigationView navigationView){
         View view = navigationView.getHeaderView(0);
-
-        User user = User.getTestUser();
-        Uri photo = Uri.parse(user.getPhoto());
-        //ImageView profile = (ImageView) view.findViewById(R.id.drawer_background);
+        User user = new User();
+        Uri photo = Uri.parse(Prefs.with(this).getPhoto());
         SimpleDraweeView avatar = (SimpleDraweeView) view.findViewById(R.id.drawer_avatar);
         TextView name = (TextView) view.findViewById(R.id.drawer_name);
 
         avatar.setImageURI(photo);
-        name.setText(user.getName());
+        name.setText(user.getNombres());
 
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,77 +1,56 @@
 package com.mobile.udem.models;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by osmar on 07-28-17.
  */
 
 public class User {
-    private String id;
-    private String name;
-    private String address;
-    private String gender;
-    private String career;
-    private String photo;
+    @SerializedName("Usuario")
+    @Expose
+    private String usuario;
+    @SerializedName("Nombres")
+    @Expose
+    private String nombres;
+    @SerializedName("Sexo")
+    @Expose
+    private String sexo;
+    @SerializedName("Foto")
+    @Expose
+    private String foto;
 
-    public User(String id, String name, String address, String gender, String career, String photo) {
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.gender = gender;
-        this.career = career;
-        this.photo = photo;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public String getId() {
-        return id;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public String getNombres() {
+        return nombres;
     }
 
-    public String getName() {
-        return name;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getSexo() {
+        return sexo;
     }
 
-    public String getAddress() {
-        return address;
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public String getFoto() {
+        return foto;
     }
 
-    public String getGender() {
-        return gender;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getCareer() {
-        return career;
-    }
-
-    public void setCareer(String career) {
-        this.career = career;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public static User getTestUser() {
-        User user = new User("1", "John Smith","Managua Nicaragua",
-                "Masculino","Ingenieria en sistemas", "http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg");
-        return user;
-    }
 }

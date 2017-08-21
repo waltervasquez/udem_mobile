@@ -1,10 +1,12 @@
 package com.mobile.udem.ui.activities;
 
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.mobile.udem.R;
@@ -32,6 +34,12 @@ public class NoteActivity extends AppCompatActivity {
     }
     
     private void initializeViews(){
+        //Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.ic_back_arrow);
+        toolbar.setTitle(getString(R.string.title_activity_note));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white));
+        setSupportActionBar(toolbar);
         //Recycler View
         recyclerView = (RecyclerView) findViewById(R.id.notes_list);
         recyclerView.setHasFixedSize(true);
@@ -61,5 +69,10 @@ public class NoteActivity extends AppCompatActivity {
                 Log.i("Api failed", " failed " + t.getMessage());
             }
         });
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

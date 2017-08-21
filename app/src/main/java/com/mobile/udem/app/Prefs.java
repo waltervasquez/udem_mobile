@@ -9,12 +9,9 @@ import android.content.SharedPreferences;
 
 public class Prefs {
 
-    private static final String SIGN_UP = "sign_up";
     private static final String IS_LOGIN = "is_login";
     private static final String USER = "user";
-    private static final String NAME = "user";
-    private static final String GENDER = "user";
-    private static final String PHOTO = "user";
+    private static final String PHOTO = "photo";
     private static final String PREFS_NAME = "prefs";
     private static Prefs instance;
     private final SharedPreferences sharedPreferences;
@@ -42,35 +39,23 @@ public class Prefs {
     public boolean getIsLogin(){
         return sharedPreferences.getBoolean(IS_LOGIN, false);
     }
-    public void setSignUp(boolean loggin) {
 
-        sharedPreferences
-                .edit()
-                .putBoolean(SIGN_UP, loggin)
-                .apply();
-    }
     public void setUser(String user){
         sharedPreferences
                 .edit()
                 .putString(USER, user)
                 .apply();
     }
-
-    public boolean getSignUp(){
-        return sharedPreferences.getBoolean(SIGN_UP, false);
+    public void setPhoto(String photo){
+        sharedPreferences
+                .edit()
+                .putString(PHOTO, photo)
+                .apply();
     }
 
     public String getUser(){
         return sharedPreferences.getString(USER,"");
     }
 
-    public void store (String user, String name, String gender, String photo){
-        sharedPreferences
-                .edit()
-                .putString(USER,user)
-                .putString(NAME, name)
-                .putString(GENDER, gender)
-                .putString(PHOTO, photo)
-                .apply();
-    }
+    public String getPhoto(){return  sharedPreferences.getString(PHOTO,"");}
 }

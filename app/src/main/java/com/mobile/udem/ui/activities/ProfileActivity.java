@@ -62,8 +62,8 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void loadProfile(){
-        User user = User.getTestUser();
-        Uri photo = Uri.parse(user.getPhoto());
+        User user = new User();
+        Uri photo = Uri.parse(Prefs.with(this).getPhoto());
         mUserProfileImageBackground.setImageURI(photo);
         mUserProfileImage.setImageURI(photo);
     }

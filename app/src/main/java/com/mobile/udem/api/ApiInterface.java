@@ -21,9 +21,9 @@ public interface ApiInterface {
 
     /**
      * Make http request to get an user
-     *
+     *http://udemservices.udem.edu.ni/api/Login
      * @param auth
-     * @return AccessTokenModel
+     * @return User
      */
     @POST("Login")
     Call<User> signIn(@Body Auth auth);
