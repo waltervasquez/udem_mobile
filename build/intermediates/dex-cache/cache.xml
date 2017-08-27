@@ -43,7 +43,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.3"
-        sha1="325619185b760dd360b403909cb58cdf55eb7b42">
+        sha1="3f9e2919978d04abc84414b516a067e83195f78a">
         <dex dex="/home/osmar/Projects/udem_mobile/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_ec658b9f07616baf2377b1cd9ea51c4244391a8e/classes.dex" />
     </item>
     <item

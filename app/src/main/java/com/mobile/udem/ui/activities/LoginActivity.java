@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -78,19 +77,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
               if(response.isSuccessful() && response.body() != null) {
 
-                  Log.i("api_login", response.body().getNombres());
 
                   Prefs.with(LoginActivity.this).setIsLogin(true);
                   Prefs.with(LoginActivity.this).setUser(response.body().getUsuario());
                   Prefs.with(LoginActivity.this).setPhoto(response.body().getFoto());
-                  User user = new User();
-                  user.setNombres(response.body().getNombres());
-
 
                   Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                   startActivity(intent);
                   finish();
                   signIn.revertAnimation();
+
               }
               else {
                   showError(Api.parseError(response.errorBody()).toString());

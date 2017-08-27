@@ -3,6 +3,7 @@ package com.mobile.udem.api;
 import com.mobile.udem.models.Auth;
 import com.mobile.udem.models.History;
 import com.mobile.udem.models.Notes;
+import com.mobile.udem.models.Profile;
 import com.mobile.udem.models.User;
 
 import java.util.List;
@@ -39,4 +40,9 @@ public interface ApiInterface {
    */
     @GET("Calificaciones/{usuario}")
     Call<List<Notes>> getNotes(@Path("usuario") String code);
+    /*
+    http://udemservices.udem.edu.ni/api/Inforestudiante/121388
+   */
+    @GET("Inforestudiante/{usuario}")
+    Call<Profile> getProfile(@Path("usuario") String code);
 }

@@ -50,7 +50,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".ui.activities.NotificationActivity" />
         <activity android:name=".ui.activities.NoteActivity"
             android:theme="@style/AppTheme.NoActionBar" />

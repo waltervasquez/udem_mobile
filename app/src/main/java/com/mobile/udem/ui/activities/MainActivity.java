@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,9 +22,15 @@ import android.widget.TextView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.mobile.udem.R;
+import com.mobile.udem.api.Api;
 import com.mobile.udem.app.Prefs;
-import com.mobile.udem.models.User;
+import com.mobile.udem.models.ApiErrorResponse;
+import com.mobile.udem.models.Profile;
 import com.stephentuso.welcome.WelcomeHelper;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,19 +39,21 @@ public class MainActivity extends AppCompatActivity
     private RelativeLayout badgeLayout;
     WelcomeHelper welcomeScreen;
     NavigationView navigationView;
+    Profile profile;
+    public static String names, career, shift;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this);
-        welcomeScreen = new WelcomeHelper(this, WalkthroughActivity.class);
-        welcomeScreen.show(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(R.drawable.ic_menu);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
+        profile = new Profile();
 
 
 
@@ -76,13 +85,12 @@ public class MainActivity extends AppCompatActivity
         }
         else {
 
-            loadProfile(navigationView);
+            getProfile();
         }
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        welcomeScreen.onSaveInstanceState(outState);
     }
 
     @Override
@@ -98,16 +106,13 @@ public class MainActivity extends AppCompatActivity
 
 
 
-    private void loadProfile(NavigationView navigationView){
+    private void loadProfile(NavigationView navigationView, String names){
         View view = navigationView.getHeaderView(0);
-        User user = new User();
         Uri photo = Uri.parse(Prefs.with(this).getPhoto());
         SimpleDraweeView avatar = (SimpleDraweeView) view.findViewById(R.id.drawer_avatar);
         TextView name = (TextView) view.findViewById(R.id.drawer_name);
 
         avatar.setImageURI(photo);
-        name.setText(user.getNombres());
-
         avatar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,7 +120,40 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        name.setText(names);
+        Log.i("Perfil2",names);
 
+
+    }
+    private void getProfile(){
+        Call<Profile> call = Api.instance().getProfile(Prefs.with(this).getUser());
+        call.enqueue(new Callback<Profile>() {
+            @Override
+            public void onResponse(Call<Profile> call, Response<Profile> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    profile.setCarrera(response.body().getCarrera());
+                    profile.setCelular(response.body().getCelular());
+                    profile.setEmail(response.body().getEmail());
+                    profile.setSexo(response.body().getSexo());
+                    profile.setTurno(response.body().getTurno());
+
+                    names = response.body().getNombres();
+                    career = response.body().getCarrera();
+                    shift = response.body().getTurno();
+                    Log.i("Perfil", response.body().getNombres());
+                    loadProfile(navigationView, response.body().getNombres());
+                } else {
+                    // Invalid response
+                    ApiErrorResponse apiErrorResponse = Api.parseError(response.errorBody());
+                    Log.i("Api error", apiErrorResponse.getError().getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Profile> call, Throwable t) {
+                Log.i("Api failed", " failed " + t.getMessage());
+            }
+        });
     }
     public void openProfile(){
         Intent intent = new Intent(MainActivity.this, ProfileActivity.class);

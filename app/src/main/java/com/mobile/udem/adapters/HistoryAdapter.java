@@ -23,6 +23,7 @@ import java.util.List;
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
     private List<History> histories;
     private Context context;
+    public static int totalApproved = 0;
 
     public HistoryAdapter(List<History> histories, Context context){
 
@@ -52,14 +53,18 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
            TextView textView =  (TextView)view.findViewById(R.id.history_class);
             textView.setText(historial.getAsignatura());
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.history_state);
-            if(historial.getAprobado())
+            if(historial.getAprobado()) {
                 checkBox.setChecked(true);
+                totalApproved = totalApproved + 1;
+            }
             row.addView(view);
 
             holder.tableLayout.addView(row, i);
             // Adds the view to the layout
         }
+
     }
+
 
     @Override
     public int getItemCount() {

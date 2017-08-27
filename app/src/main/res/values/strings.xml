@@ -38,4 +38,6 @@
 
     <!-- Googlee api key -->
     <string name="google_api_key">AIzaSyDv0hBPiARb8igqSZ-tzSiBqDCTX-V56zY</string>
+    <string name="profile_class_approved">Aprobadas</string>
+    <string name="profile_class_pending">Pendientes</string>
 </resources>

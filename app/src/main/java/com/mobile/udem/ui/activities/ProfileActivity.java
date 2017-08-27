@@ -9,6 +9,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ViewTreeObserver;
+import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -18,7 +20,6 @@ import com.mobile.udem.api.Api;
 import com.mobile.udem.app.Prefs;
 import com.mobile.udem.models.ApiErrorResponse;
 import com.mobile.udem.models.History;
-import com.mobile.udem.models.User;
 
 import java.util.List;
 
@@ -30,6 +31,8 @@ public class ProfileActivity extends AppCompatActivity {
     private SimpleDraweeView mUserProfileImageBackground;
     private SimpleDraweeView mUserProfileImage;
     private RecyclerView recyclerView;
+    private TextView names,career,approved, pending, shift;
+    private HistoryAdapter historyAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +43,8 @@ public class ProfileActivity extends AppCompatActivity {
         toolbar.setNavigationIcon(R.drawable.ic_back_arrow);
         setSupportActionBar(toolbar);
         initializeView();
-        loadProfile();
         getData();
+        loadProfile();
     }
     private void initializeView(){
         CollapsingToolbarLayout mCollapsingView = (CollapsingToolbarLayout) findViewById(R.id.collapsing);
@@ -50,6 +53,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         mUserProfileImageBackground = (SimpleDraweeView) findViewById(R.id.user_profile_image_background);
         mUserProfileImage = (SimpleDraweeView) findViewById(R.id.user_profile_image);
+        approved = (TextView) findViewById(R.id.user_profile_approved);
+        pending = (TextView) findViewById(R.id.user_profile_pending);
+        names = (TextView) findViewById(R.id.user_profile_name);
+        career = (TextView) findViewById(R.id.user_profile_career);
+        shift = (TextView) findViewById(R.id.user_profile_shift);
 
         //Recycler View
         recyclerView = (RecyclerView) findViewById(R.id.history_list);
@@ -59,19 +67,24 @@ public class ProfileActivity extends AppCompatActivity {
         linearLayoutManager.setStackFromEnd(true);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+
     }
 
     private void loadProfile(){
-        User user = new User();
         Uri photo = Uri.parse(Prefs.with(this).getPhoto());
         mUserProfileImageBackground.setImageURI(photo);
         mUserProfileImage.setImageURI(photo);
+        names.setText(MainActivity.names);
+        career.setText(MainActivity.career);
+        shift.setText(MainActivity.shift);
+
     }
     @Override
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
     }
+
     /**
      * Make http request
      */
@@ -82,8 +95,9 @@ public class ProfileActivity extends AppCompatActivity {
             public void onResponse(Call<List<History>> call, Response<List<History>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     Log.i("Call_api", String.valueOf(response.body()));
-                    HistoryAdapter historyAdapter = new HistoryAdapter(response.body(), ProfileActivity.this);
+                    historyAdapter = new HistoryAdapter(response.body(), ProfileActivity.this);
                     recyclerView.setAdapter(historyAdapter);
+
 
                 } else {
                     // Invalid response
@@ -97,5 +111,21 @@ public class ProfileActivity extends AppCompatActivity {
                 Log.i("Api failed", " failed " + t.getMessage());
             }
         });
+        getTotal();
+    }
+    public void getTotal(){
+        recyclerView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                approved.setText(String.valueOf(HistoryAdapter.totalApproved));
+                pending.setText(String.valueOf(60 - HistoryAdapter.totalApproved));
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        HistoryAdapter.totalApproved = 0;
     }
 }
