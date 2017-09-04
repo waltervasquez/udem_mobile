@@ -4,6 +4,7 @@ import com.mobile.udem.models.Auth;
 import com.mobile.udem.models.History;
 import com.mobile.udem.models.Notes;
 import com.mobile.udem.models.Profile;
+import com.mobile.udem.models.Schedule;
 import com.mobile.udem.models.User;
 
 import java.util.List;
@@ -45,4 +46,9 @@ public interface ApiInterface {
    */
     @GET("Inforestudiante/{usuario}")
     Call<Profile> getProfile(@Path("usuario") String code);
+    /*
+    http://udemservices.udem.edu.ni/api/Inscripciones/121388
+   */
+    @GET("Inscripciones/{usuario}")
+    Call<List<Schedule>> getSchedule(@Path("usuario") String code);
 }

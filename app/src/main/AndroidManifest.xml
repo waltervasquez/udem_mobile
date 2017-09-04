@@ -50,10 +50,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activities.ProfileActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize"/>
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activities.NotificationActivity" />
-        <activity android:name=".ui.activities.NoteActivity"
+        <activity
+            android:name=".ui.activities.NoteActivity"
+            android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activities.SettingActivity" />
         <!--
@@ -68,7 +70,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ui.activities.MapsActivity"></activity>
+        <activity android:name=".ui.activities.MapsActivity" />
+        <activity
+            android:name=".ui.activities.ScheduleActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activities.HistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:configChanges="orientation|screenSize"/>
     </application>
 
 </manifest>

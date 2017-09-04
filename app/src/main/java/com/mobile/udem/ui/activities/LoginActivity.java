@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -75,7 +76,11 @@ public class LoginActivity extends AppCompatActivity {
         call.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-              if(response.isSuccessful() && response.body() != null) {
+                Log.i("Response", String.valueOf(response.message()));
+                Log.i("Code", String.valueOf(response.code()));
+                Log.i("Error", String.valueOf(response.errorBody()));
+                Log.i("Body", String.valueOf(response.body()));
+              if(response.isSuccessful()) {
 
 
                   Prefs.with(LoginActivity.this).setIsLogin(true);
@@ -89,7 +94,8 @@ public class LoginActivity extends AppCompatActivity {
 
               }
               else {
-                  showError(Api.parseError(response.errorBody()).toString());
+                  showError(getString(R.string.login_error));
+                  signIn.revertAnimation();
               }
             }
 

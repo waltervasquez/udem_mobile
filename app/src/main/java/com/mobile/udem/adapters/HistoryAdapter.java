@@ -47,10 +47,11 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
         for(int i=0;i<history.getHistorialClaseGrado().size();i++)
         {
             HistorialClaseGrado historial = history.getHistorialClaseGrado().get(i);
-            TableRow row = new TableRow(context);
 
+            TableRow row = new TableRow(context);
             View view = LayoutInflater.from(context).inflate(R.layout.table_row_history, null);
-           TextView textView =  (TextView)view.findViewById(R.id.history_class);
+
+            TextView textView =  (TextView)view.findViewById(R.id.history_class);
             textView.setText(historial.getAsignatura());
             CheckBox checkBox = (CheckBox) view.findViewById(R.id.history_state);
             if(historial.getAprobado()) {
@@ -58,7 +59,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
                 totalApproved = totalApproved + 1;
             }
             row.addView(view);
-
             holder.tableLayout.addView(row, i);
             // Adds the view to the layout
         }
@@ -81,8 +81,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHold
             mView = v;
             mNumber = (TextView) v.findViewById(R.id.row_history_number);
             tableLayout = (TableLayout) v.findViewById(R.id.history_table);
-
-
+            tableLayout.setStretchAllColumns(true);
         }
     }
 }

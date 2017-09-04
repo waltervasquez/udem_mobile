@@ -201,8 +201,12 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_notes) {
             openActivity(NoteActivity.class);
         } else if (id == R.id.nav_class) {
+            openActivity(ScheduleActivity.class);
 
-        } else if (id == R.id.nav_teacher) {
+        } else if (id == R.id.nav_history) {
+            openActivity(HistoryActivity.class);
+
+        }else if (id == R.id.nav_teacher) {
 
         } else if (id == R.id.nav_map_location) {
             openActivity(MapsActivity.class);

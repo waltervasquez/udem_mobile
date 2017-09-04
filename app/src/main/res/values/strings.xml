@@ -24,6 +24,7 @@
     <string name="title_activity_profile">Perfil</string>
     <string name="title_activity_note">Calificaciones</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_schedule">Clases</string>
     <!-- Navigation -->
     <string name="nav_notes">Calificaciones</string>
     <string name="nav_class">Clases</string>
@@ -38,6 +39,9 @@
 
     <!-- Googlee api key -->
     <string name="google_api_key">AIzaSyDv0hBPiARb8igqSZ-tzSiBqDCTX-V56zY</string>
-    <string name="profile_class_approved">Aprobadas</string>
-    <string name="profile_class_pending">Pendientes</string>
+    <string name="profile_class_approved">Aprobadas : </string>
+    <string name="profile_class_pending">Pendientes : </string>
+    <string name="login_error">Usuario o Contaseña inválido</string>
+    <string name="nav_history">Historial</string>
+    <string name="title_activity_history">Historial</string>
 </resources>
