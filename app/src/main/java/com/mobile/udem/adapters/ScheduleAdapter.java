@@ -39,32 +39,116 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ViewHo
         holder.mClassName.setText(schedule.getAsignaura());
         holder.mGroup.setText(schedule.getGrupo());
         holder.mClassroom.setText(schedule.getAula());
-        holder.mDay.setText(schedule.getDia());
 
-        String start;
-        String finish;
-        switch(schedule.getHora()) {
-            case "1":
-                start = "7:30 am";
-                finish = "9:15 am";
+        String day = "";
+        String start = "";
+        String finish = "";
+        switch (schedule.getTurno()){
+            case "M":
+                start = "8:30 am";
+                finish = "12:00 md";
+                switch (schedule.getDia()){
+                    case "1":
+                        day = "Lunes";
+                        break;
+                    case "2":
+                        day = "Martes";
+                        break;
+                    case "3":
+                        day = "Miércoles";
+                        break;
+                    case "4":
+                        day = "Jueves";
+                        break;
+                    case "5":
+                        day = "Viernes";
+                        break;
+
+                    default:
+                        start = "ND";
+                        finish = "ND";
+                        break;
+                }
                 break;
-            case "2":
-                start = "9:30 am";
-                finish = "11:15 am";
+            case "N":
+                start = "6:15 pm";
+                finish = "8:15 pm";
+                switch (schedule.getDia()){
+                    case "1":
+                        day = "Lunes";
+                        break;
+                    case "2":
+                        day = "Martes";
+                        break;
+                    case "3":
+                        day = "Miércoles";
+                        break;
+                    case "4":
+                        day = "Jueves";
+                        break;
+                    case "5":
+                        day = "Viernes";
+                        break;
+
+                    default:
+                        start = "ND";
+                        finish = "ND";
+                        break;
+                }
                 break;
-            case "3":
-                start = "11:30 am";
-                finish = "1:15 am";
+            case "S":
+                day = "Sábado";
+                switch(schedule.getDia()) {
+                    case "1":
+                        start = "7:30 am";
+                        finish = "9:15 am";
+                        break;
+                    case "2":
+                        start = "9:30 am";
+                        finish = "11:15 am";
+                        break;
+                    case "3":
+                        start = "11:30 am";
+                        finish = "1:15 am";
+                        break;
+                    case "4":
+                        start = "2:00 pm";
+                        finish = "3:45 pm";
+                        break;
+                    default:
+                        start = "ND";
+                        finish = "ND";
+                        break;
+                }
                 break;
-            case "4":
-                start = "2:00 am";
-                finish = "3:45 pm";
-                break;
-            default:
-                start = "ND";
-                finish = "ND";
+            case "D":
+                day = "Domingo";
+                switch(schedule.getDia()) {
+                    case "1":
+                        start = "7:30 am";
+                        finish = "9:15 am";
+                        break;
+                    case "2":
+                        start = "9:30 am";
+                        finish = "11:15 am";
+                        break;
+                    case "3":
+                        start = "11:30 am";
+                        finish = "1:15 am";
+                        break;
+                    case "4":
+                        start = "2:00 pm";
+                        finish = "3:45 pm";
+                        break;
+                    default:
+                        start = "ND";
+                        finish = "ND";
+                        break;
+                }
                 break;
         }
+
+        holder.mDay.setText(day);
         holder.mTimeStart.setText(start);
         holder.mTimeFinish.setText(finish);
     }

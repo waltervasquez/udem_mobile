@@ -17,13 +17,14 @@ public class Schedule {
     @Expose
     private String grupo;
 
+    @SerializedName("Turno")
+    @Expose
+    private String turno;
+
     @SerializedName("Dia")
     @Expose
     private String dia;
 
-    @SerializedName("Hora")
-    @Expose
-    private String hora;
 
     @SerializedName("Aula")
     @Expose
@@ -45,20 +46,20 @@ public class Schedule {
         this.grupo = grupo;
     }
 
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
     public String getDia() {
         return dia;
     }
 
     public void setDia(String dia) {
         this.dia = dia;
-    }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
     }
 
     public String getAula() {

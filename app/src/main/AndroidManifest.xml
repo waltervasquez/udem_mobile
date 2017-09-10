@@ -75,9 +75,12 @@
             android:name=".ui.activities.ScheduleActivity"
             android:configChanges="orientation|screenSize"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.activities.HistoryActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:configChanges="orientation|screenSize"/>
+        <activity
+            android:name=".ui.activities.HistoryActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.activities.TeacherActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

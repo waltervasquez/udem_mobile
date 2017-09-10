@@ -17,7 +17,7 @@
     <string name="welcomeDescriptionThird">dolor sit amet dolor sit amet dolor sit amet.</string>
     <string name="login_user">Usuario</string>
     <string name="login_password">Contraseña</string>
-    <string name="action_sign_in">Inicar sesion</string>
+    <string name="action_sign_in">Inicar sesión</string>
     <!-- Keyboard problem-->
     <string name="vowel">á é í ó ú</string>
     <!-- Activities titles -->
@@ -31,9 +31,9 @@
     <string name="nav_setting">Configuraciones</string>
     <string name="nav_location">Lugares</string>
     <string name="nav_teacher">Profesores</string>
-    <string name="nav_logout">Cerrar sesion</string>
+    <string name="nav_logout">Cerrar sesión</string>
     <string name="notes_accumulated">Acumulado</string>
-    <string name="notes_quiz">Examen</string>
+    <string name="notes_quiz">Exámen</string>
     <string name="notes_final">Final</string>
     <string name="notes_rescue">Rescate</string>
 
@@ -44,4 +44,10 @@
     <string name="login_error">Usuario o Contaseña inválido</string>
     <string name="nav_history">Historial</string>
     <string name="title_activity_history">Historial</string>
+    <string name="activity_no_finished">Estamos trabajando en esta vista!</string>
+    <string name="title_activity_teacher">Profesores</string>
+    <string name="action_back">Regresar</string>
+    <string name="hint_phone">Teléfono</string>
+    <string name="hint_email">Correo</string>
+    <string name="action_save">Guardar</string>
 </resources>

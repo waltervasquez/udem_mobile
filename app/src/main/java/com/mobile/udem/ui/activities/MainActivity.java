@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity
     WelcomeHelper welcomeScreen;
     NavigationView navigationView;
     Profile profile;
-    public static String names, career, shift;
+    public static String names, career, shift, phone, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,15 +131,13 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onResponse(Call<Profile> call, Response<Profile> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    profile.setCarrera(response.body().getCarrera());
-                    profile.setCelular(response.body().getCelular());
-                    profile.setEmail(response.body().getEmail());
-                    profile.setSexo(response.body().getSexo());
-                    profile.setTurno(response.body().getTurno());
 
                     names = response.body().getNombres();
                     career = response.body().getCarrera();
                     shift = response.body().getTurno();
+                    phone = response.body().getCelular();
+                    email = response.body().getEmail();
+
                     Log.i("Perfil", response.body().getNombres());
                     loadProfile(navigationView, response.body().getNombres());
                 } else {
@@ -167,7 +165,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.notification, menu);
+        getMenuInflater().inflate(R.menu.menu_notification, menu);
         MenuItem item = menu.findItem(R.id.action_notification);
         MenuItemCompat.setActionView(item, R.layout.badge_layout);
         View v = MenuItemCompat.getActionView(item);
@@ -207,6 +205,7 @@ public class MainActivity extends AppCompatActivity
             openActivity(HistoryActivity.class);
 
         }else if (id == R.id.nav_teacher) {
+            openActivity(TeacherActivity.class);
 
         } else if (id == R.id.nav_map_location) {
             openActivity(MapsActivity.class);
